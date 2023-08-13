@@ -9,7 +9,7 @@ const Table = ({ expenses, showCategory = true }) => {
           <tr>
             {["Name", "Amount", "Date", showCategory ? "Category" : "", ""].map(
               (i, index) => (
-                <th key={index}>{i}</th>
+                <th key={i.length}>{i}</th>
               )
             )}
           </tr>

@@ -1,9 +1,7 @@
 import React from "react";
-import { deleteData, fetchData } from "../helper";
-import { toast } from "react-toastify";
-import { Link, useLoaderData, useNavigate } from "react-router-dom";
-import { ArrowLeftIcon, ArrowUturnLeftIcon } from "@heroicons/react/24/solid";
-import Table from "../components/Table";
+import { fetchData } from "../helper";
+import { useLoaderData, useNavigate } from "react-router-dom";
+import { ArrowUturnLeftIcon } from "@heroicons/react/24/solid";
 import CategoryItem from "../components/CategoryItem";
 
 //Loader for Categories Screen

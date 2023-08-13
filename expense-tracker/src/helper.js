@@ -67,13 +67,15 @@ export const createExpense = ({ name, amount, categoryId }) => {
 // Total spent by category
 export const calculateSpentByCategory = (categoryId) => {
   const expenses = fetchData("expenses") ?? [];
-  const amountSpent = expenses.reduce((acc, expense) => {
-    //Check if expense.categoryId === categoryId
-    if (expense.categoryId !== categoryId) return acc;
 
-    //Add the current amount to the total amount
-    return (acc += expense.amount);
-  }, 0);
+  const filteredExpenses = expenses.filter(
+    (expense) => expense.categoryId === categoryId
+  );
+
+  const amountSpent = filteredExpenses
+    .map((expense) => expense.amount)
+    .reduce((total, amount) => total + amount, 0);
+
   return amountSpent;
 };
 

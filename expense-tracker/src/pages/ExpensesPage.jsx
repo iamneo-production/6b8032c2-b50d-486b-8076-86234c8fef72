@@ -1,9 +1,9 @@
 import React from "react";
-import { Link, useLoaderData, useNavigate } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import { deleteData, fetchData } from "../helper";
 import Table from "../components/Table";
 import { toast } from "react-toastify";
-import { ArrowLeftIcon, ArrowUturnLeftIcon } from "@heroicons/react/24/solid";
+import { ArrowUturnLeftIcon } from "@heroicons/react/24/solid";
 
 //Loader for Expenses Screen
 export function expensesLoader() {
