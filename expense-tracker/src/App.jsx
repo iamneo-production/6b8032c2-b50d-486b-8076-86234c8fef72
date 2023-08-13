@@ -1,6 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Dashboard, { dashboardAction, dashboardLoader } from "./pages/Dashboard";
-import Error from "./pages/Error";
 import Main, { mainLoader } from "./layouts/Main";
 import { logoutAction } from "./actions/logout";
 
@@ -17,27 +16,28 @@ import CategoryPage, {
 } from "./pages/CategoryPage";
 import { deleteCategory } from "./actions/deleteCategory";
 import CategoriesPage, { categoriesLoader } from "./pages/CategoriesPage";
+import CustomErrorComponent from "./pages/CustomErrorComponent";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main />,
     loader: mainLoader,
-    errorElement: <Error />,
+    errorElement: <CustomErrorComponent />,
     children: [
       {
         index: true,
         element: <Dashboard />,
         loader: dashboardLoader,
         action: dashboardAction,
-        errorElement: <Error />,
+        errorElement: <CustomErrorComponent />,
       },
       {
         path: "category/:id",
         element: <CategoryPage />,
         loader: categoryLoader,
         action: categorAction,
-        errorElement: <Error />,
+        errorElement: <CustomErrorComponent />,
         children: [
           {
             path: "delete",
@@ -50,14 +50,14 @@ const router = createBrowserRouter([
         element: <ExpensesPage />,
         loader: expensesLoader,
         action: expensesAction,
-        errorElement: <Error />,
+        errorElement: <CustomErrorComponent />,
       },
       {
         path: "categories",
         element: <CategoriesPage />,
         loader: categoriesLoader,
         // action: expensesAction,
-        errorElement: <Error />,
+        errorElement: <CustomErrorComponent />,
       },
       {
         path: "logout",

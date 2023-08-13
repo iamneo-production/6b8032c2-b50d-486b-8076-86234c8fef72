@@ -3,14 +3,14 @@ import { useRouteError, Link, useNavigate } from "react-router-dom";
 // library imports
 import { HomeIcon, ArrowUturnLeftIcon } from "@heroicons/react/24/solid";
 
-const Error = () => {
-  const error = useRouteError();
+const CustomErrorComponent = () => {
+  const errorCustom = useRouteError();
   const navigate = useNavigate();
 
   return (
     <div className="error">
       <h1>Uh oh! We’ve got a problem.</h1>
-      <p>{error.message || error.statusText}</p>
+      <p>{errorCustom.message || errorCustom.statusText}</p>
       <div className="flex-md">
         <button className="btn btn--dark" onClick={() => navigate(-1)}>
           <ArrowUturnLeftIcon width={20} />
@@ -24,4 +24,4 @@ const Error = () => {
     </div>
   );
 };
-export default Error;
+export default CustomErrorComponent;
