@@ -1,11 +1,11 @@
 import React from "react";
 import { createExpense, deleteData, getAllMatchingItems } from "../helper";
-import { Link, useLoaderData, useNavigate } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import CategoryItem from "../components/CategoryItem";
 import AddExpenseForm from "../components/AddExpenseForm";
 import Table from "../components/Table";
 import { toast } from "react-toastify";
-import { ArrowLeftIcon, ArrowUturnLeftIcon } from "@heroicons/react/24/solid";
+import { ArrowUturnLeftIcon } from "@heroicons/react/24/solid";
 
 //Loader for Category Screen
 export async function categoryLoader({ params }) {

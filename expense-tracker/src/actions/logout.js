@@ -1,6 +1,6 @@
 import { redirect } from "react-router-dom";
 //Helper Function
-import { deleteCompletData, deleteData } from "../helper";
+import { deleteCompletData } from "../helper";
 //Library
 import { toast } from "react-toastify";
 
